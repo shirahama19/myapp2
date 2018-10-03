@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @maxim.content %>
+</p>
+
+<p>
+  <strong>Meaning:</strong>
+  <%= @maxim.meaning %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @maxim.person %>
+</p>
+
+<%= link_to 'Edit', edit_maxim_path(@maxim) %> |
+<%= link_to 'Back', maxims_path %>
