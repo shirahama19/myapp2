@@ -10,12 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003072456) do
+ActiveRecord::Schema.define(version: 20181009081621) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "category"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exhibitions", force: :cascade do |t|
+    t.string "name"
+    t.string "place_ward"
+    t.string "place_name"
+    t.string "place_address"
+    t.string "station"
+    t.date "first_date"
+    t.date "last_date"
+    t.text "closed_date"
+    t.text "opening_time"
+    t.text "detail"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "maxims", force: :cascade do |t|
     t.text "content"
     t.text "meaning"
     t.string "person"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "ward"
+    t.string "address"
+    t.string "station"
+    t.string "day_of_week"
+    t.string "teacher_name"
+    t.text "teacher_profile"
+    t.integer "fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
